@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant AI - Career Co-Pilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#a855f7',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white min-h-screen font-sans p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-12 text-center">
+            <h1 class="text-5xl font-extrabold mb-3 tracking-tight">Radiant <span class="text-neon drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]">AI</span></h1>
+            <p class="text-gray-400 text-lg">Your agentic career co-pilot. Analyze. Adapt. Ascend.</p>
+        </header>
+
+        <div id="input-section" class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl mb-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon to-transparent opacity-50"></div>
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <svg class="w-6 h-6 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Initialize Vibe-Check
+            </h2>
+            <form id="vibe-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Dream Role</label>
+                        <input type="text" id="dream_role" name="dream_role" placeholder="e.g. AI Engineer" class="w-full bg-gray-800 border border-gray-700 rounded-xl p-3 text-white focus:outline-none focus:ring-2 focus:ring-neon transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Current Status</label>
+                        <input type="text" id="current_status" name="current_status" placeholder="e.g. B.Tech 1st Year" class="w-full bg-gray-800 border border-gray-700 rounded-xl p-3 text-white focus:outline-none focus:ring-2 focus:ring-neon transition" required>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-gray-800">
+                    <label class="block text-sm font-medium mb-3 text-gray-300">Upload Profile Data (PDF Resume)</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf" class="block w-full text-sm text-gray-400 file:mr-4 file:py-3 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-neon file:text-white hover:file:bg-purple-600 transition cursor-pointer" required>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-neon hover:bg-purple-600 text-white font-bold py-4 rounded-xl transition shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] flex justify-center items-center gap-2">
+                    Generate Agentic Roadmap
+                </button>
+            </form>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
