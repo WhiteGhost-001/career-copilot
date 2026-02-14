@@ -4,4 +4,3 @@ python-multipart
 PyPDF2
 requests
 python-dotenv
-
